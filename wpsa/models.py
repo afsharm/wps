@@ -21,7 +21,7 @@ class UserProfile(models.Model):
     tel = models.CharField(max_length=50)
     sex = models.IntegerField(choices=SEXT_TYPE)
 
-class Workspace(models.Model):
+class Workplace(models.Model):
 	area = models.IntegerField(default=0)
 	ws_type = models.IntegerField(choices=WS_TYPE)
 	description = models.CharField(max_length=8000)
@@ -48,4 +48,4 @@ class Comment(models.Model):
 	commenter_name = models.CharField(max_length=80)
 	comment = models.CharField(max_length=8000)
 	commenter = models.ForeignKey(UserProfile)
-	workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE)
+	workplace = models.ForeignKey(Workplace, on_delete=models.CASCADE)
