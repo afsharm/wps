@@ -1,0 +1,11 @@
+{% if active_wp %}
+	<ul>
+	{% for wp in active_wp %}
+		<li><a href="{% url 'wpsa:detail' wp.id %}">{{wp.province}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>
+		No Workplace is defined
+	</p>
+{% endif %}

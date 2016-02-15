@@ -1,0 +1,6 @@
+<h1>{{wp}}</h1>
+<ul>
+{% for comment in wp.comment_set.all %}
+	<li>{{comment.comment}}</li>
+{% endfor %}
+</ul>

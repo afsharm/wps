@@ -38,6 +38,8 @@ class Workplace(models.Model):
 	advertiser = models.ForeignKey(UserProfile)
 	def active_wp(self):
 		return self.start_date >= timezone.now() - datetime.timedelta(days=30)
+	def __str__(self):
+		return self.province + ", " + self.city
 
 class Comment(models.Model):
 	create_date = models.DateTimeField('when comment is created')
