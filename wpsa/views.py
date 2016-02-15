@@ -16,6 +16,6 @@ def detail(request, wp_id):
 
 def addcomment(request, wp_id):
 	wp = get_object_or_404(Workplace, pk=wp_id)
-	c = Comment(comment = request.POST['comment'], create_date = timezone.now(), published=1, spam=1, commenter_id=-1, workplace_id=wp_id)
+	c = Comment(body = request.POST['body'], create_date = timezone.now(), published=1, spam=1, commenter_id=-1, workplace_id=wp_id)
 	c.save()
 	return HttpResponseRedirect(reverse('wpsa:detail', args=(wp_id)))

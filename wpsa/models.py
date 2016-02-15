@@ -48,6 +48,6 @@ class Comment(models.Model):
 	spam = models.BooleanField('is it spam?')
 	commenter_email = models.CharField(max_length=80)
 	commenter_name = models.CharField(max_length=80)
-	comment = models.CharField(max_length=8000)
+	body = models.CharField(max_length=8000)
 	commenter = models.ForeignKey(UserProfile)
 	workplace = models.ForeignKey(Workplace, on_delete=models.CASCADE)
