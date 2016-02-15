@@ -4,3 +4,11 @@
 	<li>{{comment.comment}}</li>
 {% endfor %}
 </ul>
+
+{% if error_message %}<p><strong>{{error_message}}</strong></p>{% endif %}
+
+<form action="{% url 'wpsa:addcomment' wp.id %}" method="post">
+	{% csrf_token %}
+	<input type="text" name="comment" id="comment"/>
+	<input type="submit" value="Add Comment"/>
+</form>
