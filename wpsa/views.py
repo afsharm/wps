@@ -4,15 +4,17 @@ from .models import Workplace, Comment
 from django.template import loader
 from django.core.urlresolvers import reverse
 from django.utils import timezone
+from django.views import generic
 
-def index(request):
-	active_wp = Workplace.objects.order_by('-start_date')[:5]
-	context = {'active_wp': active_wp}
-	return render(request, 'wpsa/index.html', context)
+class IndexView(generic.ListView):
+	template_name = 'wpsa/index.html'
+	context_object_name = 'active_wp'
+	def get_queryset(self):
+		return Workplace.objects.order_by('-start_date')[:5]
 
-def detail(request, wp_id):
-	wp = get_object_or_404(Workplace, pk=wp_id)
-	return render(request, 'wpsa/detail.html', {'wp': wp})
+class DetailView(generic.DetailView):
+	model = Workplace
+	template_name = 'wpsa/detail.html'
 
 def addcomment(request, wp_id):
 	wp = get_object_or_404(Workplace, pk=wp_id)
