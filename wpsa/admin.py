@@ -3,6 +3,10 @@ from .models import UserProfile
 from .models import Workplace
 from .models import Comment
 
-admin.site.register(UserProfile)
+class WorkplaceAdmin(admin.ModelAdmin):
+	fields = ['province', 'city']
+
+#admin.site.register(Workplace, WorkplaceAdmin)
 admin.site.register(Workplace)
+admin.site.register(UserProfile)
 admin.site.register(Comment)
