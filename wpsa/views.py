@@ -5,14 +5,14 @@ from django.template import loader
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from django.views import generic
-from .forms import NameForm
+from .forms import NameForm, WorkplaceForm
 from django.core.mail import send_mail
 
 class IndexView(generic.ListView):
 	template_name = 'wpsa/index.html'
 	context_object_name = 'active_wp'
 	def get_queryset(self):
-		return Workplace.objects.order_by('-start_date')[:5]
+	   return Workplace.objects.order_by('-start_date')[:5]
 
 class DetailView(generic.DetailView):
 	model = Workplace
@@ -55,7 +55,7 @@ def contact_from(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             sender = form.cleaned_data['sender']
-            cc_myself = from.cleaned_data['cc_myself']
+            cc_myself = form.cleaned_data['cc_myself']
             
             recipients = ['info@example.com']
             
@@ -70,3 +70,22 @@ def contact_from(request):
             form = NameForm()
         
         return render(request, 'name.html', {'form': form})
+
+def register_wp(request):
+    if request.method == 'POST':
+        form = WorkplaceForm(request.POST)
+        if form.is_valid():
+            time_now = timezone.now()
+            wp = form.save(commit=False)
+            wp.create_date = time_now 
+            wp.start_date = time_now
+            wp.end_date = time_now
+            wp.register_date = time_now
+            wp.expire_date = time_now
+            wp.published = 1
+            wp.advertiser_id = 0
+            wp.save()
+        return HttpResponseRedirect(reverse('wpsa:detail', args=(wp.id,)))        
+    else: #GET or anything else
+        form = WorkplaceForm()
+        return render(request, 'wpsa/register_wp.html', {'form': form})

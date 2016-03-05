@@ -1,4 +1,5 @@
-from django import forms, ModelForm
+from django import forms
+from django.forms import ModelForm
 from .models import Workplace
 
 class NameForm(forms.Form):
@@ -12,7 +13,7 @@ class ContactForm(forms.Form):
     
 class WorkplaceForm(ModelForm):
     class Meta:
-        model = Article
-        fields = ['province','city']
+        model = Workplace
+        fields = ['province','city', 'ws_type']
         #article = Article.objects.get(pk=1)
         #form = ArticleForm(instance=article)
