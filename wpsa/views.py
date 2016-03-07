@@ -73,7 +73,7 @@ def contact_from(request):
 
 def register_wp(request):
     if request.method == 'POST':
-        form = WorkplaceForm(request.POST)
+        form = WorkplaceForm(request.POST, request.FILES)
         if form.is_valid():
             time_now = timezone.now()
             wp = form.save(commit=False)

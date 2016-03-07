@@ -65,3 +65,4 @@ target/
 # pyenv
 .python-version
 db.sqlite3
+uploads/
