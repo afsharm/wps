@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'wpsa/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'wpsa/bootstrap/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'wpsa/style.css' %}" />
 <a href="/wpsa/register_wp">Register new Workplace</a>
 {% if active_wp %}
 	<ul>
@@ -13,3 +14,4 @@
 		No Workplace is defined
 	</p>
 {% endif %}
+<script src="{% static 'wpsa/bootstrap/js/bootstrap.min.js' %}"></script>
