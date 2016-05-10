@@ -1,3 +1,7 @@
+{% extends 'wpsa/base.html' %}
+{% block title %} detail {% endblock %}
+{% block body_block %}
+<br/>
 <a href="/wpsa">Back to list...</a>
 
 <h1>{{workplace}}</h1>
@@ -14,3 +18,4 @@
 	<input type="text" name="body" id="body"/>
 	<input type="submit" value="Add Comment"/>
 </form>
+{% endblock %}

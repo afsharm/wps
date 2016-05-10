@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<title>Register a Workplace</title>
+{% extends 'wpsa/base.html' %}
+{% block body_block %}
+{% block title %} Register a Workplace {% endblock %}
 <h1>Register a Workplace</h1>
 <a href="/wpsa">Back to list...</a>
 <form action="/wpsa/register_wp/" method="POST" enctype="multipart/form-data">
@@ -7,3 +8,4 @@
     {{ form.as_p }}
     <input type="submit" value="Submit" />
 </form>
+{% endblock %}
