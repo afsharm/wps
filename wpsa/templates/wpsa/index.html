@@ -7,13 +7,13 @@
         <p>This is a sample project to learn Django/Python</p>
       </div>
 
-<a href="/wpsa/register_wp">Register new Workplace</a>
 {% if active_wp %}
-	<ul>
 	{% for wp in active_wp %}
-		<li><a href="{% url 'wpsa:detail' wp.id %}">{{wp.province}}</a></li>
+	<div class="col-md-1" style="float: left">
+	<img src={{wp.image}}></img>
+		<a href="{% url 'wpsa:detail' wp.id %}">{{wp.province}}</a>
+	</div>
 	{% endfor %}
-	</ul>
 {% else %}
 	<p>
 		No Workplace is defined
