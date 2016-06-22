@@ -10,7 +10,7 @@
 {% if active_wp %}
 	{% for wp in active_wp %}
 	<div class="col-md-1" style="float: left">
-	<img src={{wp.image}}></img>
+	<img src=uploads/{{wp.image}}></img>
 		<a href="{% url 'wpsa:detail' wp.id %}">{{wp.province}}</a>
 	</div>
 	{% endfor %}

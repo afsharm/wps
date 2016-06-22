@@ -35,7 +35,7 @@ class Workplace(models.Model):
 	city = models.CharField(max_length=50)
 	address = models.CharField(max_length=200)
 	map_location = models.CharField(max_length=200, help_text='Longitude, Latitude')
-	image = models.FileField(upload_to='uploads/%Y/%m/%d/', null=True, blank=True)
+	image = models.FileField(upload_to='%Y/%m/%d/', null=True, blank=True)
 	advertiser = models.ForeignKey(UserProfile)
 	def active_wp(self):
 		return self.start_date >= timezone.now() - datetime.timedelta(days=30)
