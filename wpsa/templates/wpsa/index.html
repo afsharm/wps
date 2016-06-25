@@ -8,9 +8,9 @@
       </div>
 
 {% if active_wp %}
-<ul class="hide-bullets">
+<div class="row">
 	{% for wp in active_wp %}
-    <li class="col-sm-3">
+    <div class="col-md-3 col-sm-4 col-xs-6">
         <a class="thumbnail" href="{% url 'wpsa:detail' wp.id %}">
             {% if wp.image %} <!-- image is empty or null -->
             <img src=uploads/{{wp.image}}>            
@@ -19,9 +19,9 @@
             {% endif %}
             </a>            
         <span>{{wp.province}}</span>
-    </li>                    
+    </div>                    
 	{% endfor %}
-</ul>
+</div>
 {% else %}
 	<p>
 		No Workplace is defined

@@ -24,3 +24,8 @@ li a {
 .thumbnail {
     padding: 0;
 }
+
+.imgl
+{
+    max-width: 300px;
+}
