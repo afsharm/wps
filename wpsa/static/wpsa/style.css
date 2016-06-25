@@ -1,3 +1,26 @@
 li a {
 	color: green;
 }
+
+.maxw
+{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.img-con
+{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+
+.thumbnail {
+    padding: 0;
+}

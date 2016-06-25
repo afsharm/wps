@@ -12,7 +12,7 @@ class IndexView(generic.ListView):
 	template_name = 'wpsa/index.html'
 	context_object_name = 'active_wp'
 	def get_queryset(self):
-	   return Workplace.objects.order_by('-start_date')[:5]
+	   return Workplace.objects.order_by('-start_date')[:50]
 
 class DetailView(generic.DetailView):
 	model = Workplace

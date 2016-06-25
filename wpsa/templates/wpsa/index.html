@@ -8,15 +8,23 @@
       </div>
 
 {% if active_wp %}
+<ul class="hide-bullets">
 	{% for wp in active_wp %}
-	<div class="col-md-1" style="float: left">
-	<img src=uploads/{{wp.image}}></img>
-		<a href="{% url 'wpsa:detail' wp.id %}">{{wp.province}}</a>
-	</div>
+    <li class="col-sm-3">
+        <a class="thumbnail" href="{% url 'wpsa:detail' wp.id %}">
+            {% if wp.image %} <!-- image is empty or null -->
+            <img src=uploads/{{wp.image}}>            
+            {% else %}
+            <img src="http://placehold.it/300x300&text=NO IMAGE">
+            {% endif %}
+            </a>            
+        <span>{{wp.province}}</span>
+    </li>                    
 	{% endfor %}
+</ul>
 {% else %}
 	<p>
 		No Workplace is defined
 	</p>
 {% endif %}
-    {% endblock %}
+{% endblock %}
