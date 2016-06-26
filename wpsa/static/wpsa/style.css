@@ -29,3 +29,21 @@ li a {
 {
     max-width: 300px;
 }
+
+.imgbx
+{
+    width:300px;
+    height:300px; 
+    min-width:300px;
+    min-height:300px; 
+    max-width:300px;
+    max-height:300px;
+}
+
+.imar
+{
+    padding-top: 10px; 
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;    
+}

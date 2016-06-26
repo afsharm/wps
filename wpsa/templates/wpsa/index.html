@@ -10,7 +10,8 @@
 {% if active_wp %}
 <div class="row">
 	{% for wp in active_wp %}
-    <div class="col-md-3 col-sm-4 col-xs-6">
+    <div class="col-md-3 col-sm-4 col-xs-6" style="text-align:center">
+        <div class="imgbx imar">
         <a class="thumbnail" href="{% url 'wpsa:detail' wp.id %}">
             {% if wp.image %} <!-- image is empty or null -->
             <img src=uploads/{{wp.image}}>            
@@ -18,6 +19,7 @@
             <img src="http://placehold.it/300x300&text=NO IMAGE">
             {% endif %}
             </a>            
+        </div>
         <span>{{wp.province}}</span>
     </div>                    
 	{% endfor %}
