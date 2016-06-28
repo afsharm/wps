@@ -24,6 +24,7 @@ class UserProfile(models.Model):
 class Workplace(models.Model):
 	area = models.IntegerField(default=0)
 	ws_type = models.IntegerField(choices=WS_TYPE)
+	title = models.CharField(max_length=500)
 	description = models.CharField(max_length=8000)
 	price = models.IntegerField(default=0)
 	start_date = models.DateTimeField('start of sharing')
