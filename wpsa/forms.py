@@ -14,6 +14,6 @@ class ContactForm(forms.Form):
 class WorkplaceForm(ModelForm):
     class Meta:
         model = Workplace
-        fields = ['title','province','city', 'ws_type', 'image']
+        fields = ['title','province','city','price', 'ws_type', 'area','address','description', 'image']
         #article = Article.objects.get(pk=1)
         #form = ArticleForm(instance=article)

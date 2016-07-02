@@ -26,7 +26,7 @@ class Workplace(models.Model):
 	ws_type = models.IntegerField(choices=WS_TYPE)
 	title = models.CharField(max_length=500)
 	description = models.CharField(max_length=8000)
-	price = models.IntegerField(default=0)
+	price = models.DecimalField(default=0, max_digits=10,decimal_places=2)
 	start_date = models.DateTimeField('start of sharing')
 	end_date = models.DateTimeField('end of sharing')
 	register_date = models.DateTimeField('register this ws in the system')

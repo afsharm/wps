@@ -10,7 +10,7 @@
 {% if active_wp %}
 	{% for wp in active_wp %}
 <div class="row">
-    <div class="col-md-3 col-sm-4 col-xs-6">        
+    <div class="col-md-3 col-sm-2 col-xs-6">        
         <a class="thumbnail" href="{% url 'wpsa:detail' wp.id %}">
             {% if wp.image %} <!-- image is empty or null -->
             <img src=uploads/{{wp.image}}>            
@@ -19,7 +19,7 @@
             {% endif %}
             </a>                    
     </div>                    
-    <div class="col-md-3 col-sm-4 col-xs-6">
+    <div class="col-md-8 col-sm-5 col-xs-4">
         <h3>{{wp.title}}</h3>
 		{% if wp.ws_type == 0 %}
 		<img src="/static/wpsa/images/office.jpg" class="ico"/>
@@ -30,8 +30,19 @@
 		{% else %}
 		<img src="/static/wpsa/images/unknown.gif" class="ico"/>
 		{% endif %}
-        {{wp.province}} / {{wp.city}}
+        {{wp.city}}, {{wp.province}}
+        <br/>
+        {{wp.area}} <span class="gray">sqft</span>, {{wp.address}}
+        <br/>
+        {{wp.start_date|date:'Y-m-d'}}
+        <br/>
+        <p>
+	        {{wp.description}}
+        </p>
 	</div>
+    <div class="col-md-1 col-sm-1 col-xs-1 align-right">
+        <span class="price"> ${{wp.price}} </span>
+    </div>
 </div>
 	{% endfor %}
 {% else %}
