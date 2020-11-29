@@ -37,7 +37,7 @@ class Workplace(models.Model):
 	address = models.CharField(max_length=200)
 	map_location = models.CharField(max_length=200, help_text='Longitude, Latitude')
 	image = models.FileField(upload_to='%Y/%m/%d/', null=True, blank=True)
-	advertiser = models.ForeignKey(UserProfile)
+	advertiser = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 	def active_wp(self):
 		return self.start_date >= timezone.now() - datetime.timedelta(days=30)
 	def __str__(self):
@@ -51,5 +51,5 @@ class Comment(models.Model):
 	commenter_email = models.CharField(max_length=80)
 	commenter_name = models.CharField(max_length=80)
 	body = models.CharField(max_length=8000)
-	commenter = models.ForeignKey(UserProfile)
+	commenter = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 	workplace = models.ForeignKey(Workplace, on_delete=models.CASCADE)
