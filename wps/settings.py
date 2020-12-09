@@ -26,7 +26,9 @@ SECRET_KEY = ')9^95#m*x1q1$m($h$#3e%emtfzzb8em7)w2yeq^e$=8_8^6$5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'wpsa.herokuapp.com'
+]
 
 
 # Application definition
