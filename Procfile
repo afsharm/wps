@@ -1,0 +1,1 @@
+web: gunicorn wps.wsgi --log-file -
