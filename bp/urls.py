@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('sample', views.sample),
     path('province', views.province),
+    path('allcounty', views.allcounty),
 ]
