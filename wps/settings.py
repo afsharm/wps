@@ -27,7 +27,7 @@ SECRET_KEY = ')9^95#m*x1q1$m($h$#3e%emtfzzb8em7)w2yeq^e$=8_8^6$5'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'wpsa.herokuapp.com'
+    '*'
 ]
 
 
@@ -122,6 +122,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/uploads/'
